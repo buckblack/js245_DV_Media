@@ -1,0 +1,20 @@
+{
+  "name": "js245_DV_Media",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./Dich_vu/DV_MEDIA.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buckblack/js245_DV_Media.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buckblack/js245_DV_Media/issues"
+  },
+  "homepage": "https://github.com/buckblack/js245_DV_Media#readme"
+}
