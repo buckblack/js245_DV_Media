@@ -25,7 +25,12 @@ var Dich_vu = http.createServer(
                     'Content-Type': 'image/png'
                 });
                 Dap_ung.end(Nhi_phan_Kq, 'binary');
-            } else {
+            } else if (Yeu_cau.method == "POST") {
+                var Hinh = JSON.parse(Chuoi_Nhan)
+                var Kq = Luu_tru.Ghi_Nhi_phan_Media(Hinh.Ten, Hinh.Chuoi_nhi_phan)
+                Dap_ung.setHeader("Access-Control-Allow-Origin", '*')
+                Dap_ung.end(Kq);
+            }else {
                 Chuoi_Kq = Luu_tru.Thong_tin_Dich_vu()
                 Dap_ung.setHeader("Access-Control-Allow-Origin", '*')
                 Dap_ung.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');

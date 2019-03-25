@@ -24,6 +24,17 @@ class XL_LUU_TRU {
     return Nhi_phan
 
   }
+  Ghi_Nhi_phan_Media(Ten, Chuoi_nhi_phan) {
+    var Kq = ""
+    try {
+      var Nhi_phan = decodeBase64Image(Chuoi_nhi_phan);
+      var Duong_dan = Duong_dan_Thu_muc_Media + "//" + Ten
+      File.writeFileSync(Duong_dan, Nhi_phan.data);
+    } catch (Loi) {
+      Kq = Loi.toString()
+    }
+    return Kq
+  }
 
 }
 
