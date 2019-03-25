@@ -2,6 +2,19 @@
 var File = require("fs")
 var Duong_dan_Thu_muc_Media = "Media"
 
+function decodeBase64Image(dataString) {
+  var matches = dataString.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/),
+    response = {};
+
+  if (matches.length !== 3) {
+    return new Error('Lỗi ...');
+  }
+
+  response.type = matches[1];
+  response.data = new Buffer(matches[2], 'base64');
+
+  return response;
+}
 
 function Doc_Thong_tin_Dich_vu() {
   var Duong_dan = "index.html"

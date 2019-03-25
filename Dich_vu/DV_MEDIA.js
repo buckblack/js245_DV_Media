@@ -28,6 +28,8 @@ var Dich_vu = http.createServer(
             } else if (Yeu_cau.method == "POST") {
                 var Hinh = JSON.parse(Chuoi_Nhan)
                 var Kq = Luu_tru.Ghi_Nhi_phan_Media(Hinh.Ten, Hinh.Chuoi_nhi_phan)
+                console.log(Kq);
+                
                 Dap_ung.setHeader("Access-Control-Allow-Origin", '*')
                 Dap_ung.end(Kq);
             }else {
