@@ -1,4 +1,5 @@
 var http = require("http");
+var fs = require('fs');
 var Luu_tru = require("../Xu_ly/XL_LUU_TRU")
 var Xu_ly_Tham_so = require('querystring')
 var Port = normalizePort(process.env.PORT || 1001)
@@ -27,9 +28,12 @@ var Dich_vu = http.createServer(
                 Dap_ung.end(Nhi_phan_Kq, 'binary');
             } else if (Yeu_cau.method == "POST") {
                 var Hinh = JSON.parse(Chuoi_Nhan)
+                try {
+                    fs.unlinkSync('../Media/'+Hinh.Ten);
+                } catch (error) {
+                    
+                }
                 var Kq = Luu_tru.Ghi_Nhi_phan_Media(Hinh.Ten, Hinh.Chuoi_nhi_phan)
-                console.log(Kq);
-                
                 Dap_ung.setHeader("Access-Control-Allow-Origin", '*')
                 Dap_ung.end(Kq);
             }else {
